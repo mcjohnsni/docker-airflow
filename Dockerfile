@@ -59,7 +59,9 @@ RUN set -ex \
     && pip install 'redis==3.2' \
     && pip install --upgrade Flask \
     && pip install httplib2 \
+    && pip install google \
     && pip install --upgrade google-api-python-client \
+    && pip install google-api-core \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
     && apt-get purge --auto-remove -yqq $buildDeps \
     && apt-get autoremove -yqq --purge \
